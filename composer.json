@@ -1,0 +1,22 @@
+{
+    "name": "ywmelo/template-message",
+    "description": "Wechat template message",
+    "keywords": ["laravel", "notifications", "wechat"],
+    "type": "library",
+    "require": {
+        "overtrue/wechat": "4.*"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Melo",
+            "email": "747786659@qq.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "Ywmelo\\TemplateMessage\\": "src/"
+        }
+    }
+}
