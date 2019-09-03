@@ -38,7 +38,6 @@ class WechatTemplateMessageNotification extends Notification
     public function toEasySms($notifiable)
     {
         return (new WechatTemplateMessage)
-            ->to('open_id')
             ->setTemplateId('template_id')
             ->setPage('page')
             ->setFormId($this->formId)
@@ -47,8 +46,7 @@ class WechatTemplateMessageNotification extends Notification
                 'keyword2' => 'keyword2',
                 'keyword3' => 'keyword3',
                 'keyword4' => 'keyword4',
-            ])
-            ->send();
+            ]);
     }
 }
 ```

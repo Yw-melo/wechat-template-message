@@ -21,12 +21,10 @@ class WechatTemplateMessageChannel
             $to = $notifiable->openid ?? $notifiable->routeNotificationForOpenid($notification);
         }
 
-        dd($to);
-
         $message = $notification->toWechatTemplateMessage($notifiable)
             ->to($to);
 
-        $result = EasyWeChat::miniProgram()->template_message->send($message->toArray());
+        $result = \EasyWeChat::miniProgram()->template_message->send($message->toArray());
 
         if ($result['errcode'] != 0) {
             throw new WechatTemplateMessageException($result['errmsg'], $result['errcode']);
