@@ -32,15 +32,15 @@ class WechatTemplateMessage
      * @return mixed
      * @throws WechatTemplateMessageException
      */
-    public function send()
-    {
-        $result = $this->templateMessage->send($this->setMessage());
-        if ($result['errcode'] != 0) {
-            throw new WechatTemplateMessageException($result['errmsg'], $result['errcode']);
-        }
-
-        return $result;
-    }
+//    public function send()
+//    {
+//        $result = $this->templateMessage->send($this->setMessage());
+//        if ($result['errcode'] != 0) {
+//            throw new WechatTemplateMessageException($result['errmsg'], $result['errcode']);
+//        }
+//
+//        return $result;
+//    }
 
     /**
      * @return array
@@ -48,7 +48,6 @@ class WechatTemplateMessage
     public function setMessage()
     {
         return [
-            'touser' =>  $this->openId,
             'template_id' => $this->templateId,
             'page' => $this->page,
             'form_id' => $this->formId,
@@ -111,5 +110,17 @@ class WechatTemplateMessage
         return $this;
     }
 
-
+    /**
+     * @return array
+     */
+    public function toArray()
+    {
+        return [
+            'touser' => $this->openId,
+            'template_id' => $this->templateId,
+            'page' => $this->page,
+            'form_id' => $this->formId,
+            'data' => $this->data,
+        ];
+    }
 }

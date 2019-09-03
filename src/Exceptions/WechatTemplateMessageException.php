@@ -7,10 +7,11 @@ use Symfony\Component\HttpFoundation\Response;
 
 class WechatTemplateMessageException extends Exception
 {
+
     /**
-     * SmsFailedException constructor.
-     * @param int $code
-     * @param string $message
+     * WechatTemplateMessageException constructor.
+     * @param $message
+     * @param $code
      */
     public function __construct($message, $code)
     {
