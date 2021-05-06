@@ -15,7 +15,6 @@ composer require ywmelo/template-message
 ```php
 namespace App\Notifications;
 
-use BC\Models\Reservation;
 use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Notification;
 use Ywmelo\TemplateMessage\Message\WechatTemplateMessage;
@@ -35,7 +34,7 @@ class WechatTemplateMessageNotification extends Notification
         return [WechatTemplateMessageChannel::class];
     }
 
-    public function toEasySms($notifiable)
+    public function toWechatTemplateMessage($notifiable)
     {
         return (new WechatTemplateMessage)
             ->setTemplateId('template_id')
@@ -50,7 +49,7 @@ class WechatTemplateMessageNotification extends Notification
     }
 }
 ```
-    
+
 ### 发送
 
 ```php
