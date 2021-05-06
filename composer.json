@@ -4,9 +4,9 @@
     "keywords": ["laravel", "notifications", "wechat"],
     "type": "library",
     "require": {
-        "php": ">7.*",
-        "overtrue/wechat": ">4.*",
-        "laravel/framework": ">5.8.*"
+        "php": ">=7.0.0",
+        "overtrue/wechat": ">=4.0.0",
+        "laravel/framework": ">=5.8.1"
     },
     "license": "MIT",
     "authors": [
